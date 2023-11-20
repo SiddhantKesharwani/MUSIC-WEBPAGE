@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Audio Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      color: #fff;
+    }
+
+    .song-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .song {
+      text-align: center;
+      width: 300px;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .thumbnail-container {
+      position: relative;
+      width: 100%;
+      height: 375px; /* Updated height for Thumbnail 1 */
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .song-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enjoy the Music</h1>
+
+  <div class="song-container">
+    <div class="song">
+      <div class="thumbnail-container">
+        <img class="thumbnail" src="BHARAT.jpg" alt="Thumbnail 1">
+      </div>
+      <figcaption class="song-title">Chashni - Bharat</figcaption>
+      <audio id="audio1" controls>
+        <source src="Chashni---Bharat(PagalWorld).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <button onclick="playAudio('audio1')">Play</button>
+        <button onclick="pauseAudio('audio1')">Pause</button>
+        <button onclick="stopAudio('audio1')">Stop</button>
+      </div>
+    </div>
+
+    <div class="song">
+      <div class="thumbnail-container">
+        <img class="thumbnail" src="JAWAN.jpg" alt="Thumbnail 2">
+      </div>
+      <figcaption class="song-title">Zinda Banda Jawan</figcaption>
+      <audio id="audio2" controls>
+        <source src="Zinda Banda Jawan 128 Kbps.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <button onclick="playAudio('audio2')">Play</button>
+        <button onclick="pauseAudio('audio2')">Pause</button>
+        <button onclick="stopAudio('audio2')">Stop</button>
+      </div>
+    </div>
+
+    <div class="song">
+      <div class="thumbnail-container">
+        <img class="thumbnail" src="MISSION RANIGANJ.jpg" alt="Thumbnail 3">
+      </div>
+      <figcaption class="song-title">JALSA 2.0 - Akshay K & Parineeti C</figcaption>
+      <audio id="audio3" controls>
+        <source src="JALSA 2.0  Akshay K & Parineeti C  Satinder Sartaaj  Prem&Hardeep  Mission Raniganj Jjust Music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <button onclick="playAudio('audio3')">Play</button>
+        <button onclick="pauseAudio('audio3')">Pause</button>
+        <button onclick="stopAudio('audio3')">Stop</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function playAudio(audioId) {
+      var audio = document.getElementById(audioId);
+      audio.play();
+    }
+
+    function pauseAudio(audioId) {
+      var audio = document.getElementById(audioId);
+      audio.pause();
+    }
+
+    function stopAudio(audioId) {
+      var audio = document.getElementById(audioId);
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+
+</body>
+</html>
